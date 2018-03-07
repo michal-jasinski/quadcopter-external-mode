@@ -1,0 +1,1 @@
+# quadcopter-external-mode
