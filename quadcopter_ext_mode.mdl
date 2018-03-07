@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.472"
+    ComputedModelVersion    "1.473"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -158,9 +158,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Micha³"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 07 17:23:35 2018"
-  RTWModifiedTimeStamp	  442344213
-  ModelVersionFormat	  "1.%<AutoIncrement:472>"
+  LastModifiedDate	  "Wed Mar 07 17:59:34 2018"
+  RTWModifiedTimeStamp	  442346370
+  ModelVersionFormat	  "1.%<AutoIncrement:473>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1004,14 +1004,14 @@ Model {
 	      CustomProperty {
 		DataType		"string"
 		Name			"CProjectFiles"
-		Value			"'E:\\repos\\quadcopter_external_mode\\imu10_files\\LSM6DS33_accelerometer.c' 'E:\\repos\\quadcopter_externa"
-		"l_mode\\imu10_files\\LIS3MDL_magnetometer.c' "
+		Value			"'E:\\repos\\quadcopter-external-mode\\imu10_files\\LSM6DS33_accelerometer.c' 'E:\\repos\\quadcopter-externa"
+		"l-mode\\imu10_files\\LIS3MDL_magnetometer.c' "
 	      }
 	      CustomProperty {
 		DataType		"string"
 		Name			"HPathFiles"
-		Value			"'E:\\repos\\quadcopter_external_mode\\imu10_files\\LSM6DS33_accelerometer.h' 'E:\\repos\\quadcopter_externa"
-		"l_mode\\imu10_files\\LIS3MDL_magnetometer.h' "
+		Value			"'E:\\repos\\quadcopter-external-mode\\imu10_files\\LSM6DS33_accelerometer.h' 'E:\\repos\\quadcopter-externa"
+		"l-mode\\imu10_files\\LIS3MDL_magnetometer.h' "
 	      }
 	    }
 	    PropName		    "Components"
