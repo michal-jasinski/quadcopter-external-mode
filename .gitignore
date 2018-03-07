@@ -1,0 +1,14 @@
+slprj/
+.getVersionScript
+quadcopter_ext_mode_stm32/
+quadcopter_image.jpg
+quadcopter/Drivers/
+quadcopter/Inc/
+quadcopter/quadcopter_ext_mode/
+quadcopter/Src/
+quadcopter/TrueSTUDIO/
+quadcopter/.extSettings
+quadcopter/.mxproject
+quadcopter/.script
+quadcopter/mx.scratch
+quadcopter/quadcopter_extMode.ioc
