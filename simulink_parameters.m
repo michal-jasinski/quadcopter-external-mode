@@ -68,4 +68,6 @@ acc_y_gain = single(0.99);
 acc_z_gain = single(0.97);
 
 trigger_init = 1;
-q_init = single([0 0 0 0]);
+q_init = single([1 0 0 0]);
+
+

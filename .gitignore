@@ -9,6 +9,7 @@ quadcopter/Src/
 quadcopter/TrueSTUDIO/
 quadcopter/.extSettings
 quadcopter/.mxproject
+quadcopter/.mlproject
 quadcopter/.script
 quadcopter/mx.scratch
 quadcopter/quadcopter_extMode.ioc

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.473"
+    ComputedModelVersion    "1.497"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -98,7 +98,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1296.0, 1000.0]
+      Location		      [-1374.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -120,11 +120,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1242.0, 819.0]
-	ZoomFactor		[1.0]
-	Offset			[-479.5, -1056.5]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"819"
+	Extents			[1328.0, 563.0]
+	ZoomFactor		[0.8]
+	Offset			[139.75588290662608, 103.88894484186778]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -144,7 +144,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAUAAAADbAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAVWAAACbAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAALt/////wAAAAAAAAAA/"
@@ -158,9 +158,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Micha³"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 07 17:59:34 2018"
-  RTWModifiedTimeStamp	  442346370
-  ModelVersionFormat	  "1.%<AutoIncrement:473>"
+  LastModifiedDate	  "Sun Apr 08 20:13:27 2018"
+  RTWModifiedTimeStamp	  445119189
+  ModelVersionFormat	  "1.%<AutoIncrement:497>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -233,7 +233,7 @@ Model {
   ExtModeTrigMode	  "normal"
   ExtModeTrigPort	  "1"
   ExtModeTrigElement	  "any"
-  ExtModeTrigDuration	  1000
+  ExtModeTrigDuration	  125
   ExtModeTrigDurationFloating "auto"
   ExtModeTrigHoldOff	  0
   ExtModeTrigDelay	  0
@@ -270,7 +270,7 @@ Model {
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
-	  FixedStep		  "0.02"
+	  FixedStep		  "0.04"
 	  InitialStep		  "auto"
 	  MaxOrder		  5
 	  ZcThreshold		  "auto"
@@ -876,7 +876,7 @@ Model {
 		  ExtModeStaticAllocSize  256
 		  ExtModeTesting	  off
 		  ExtModeMexFile	  "ext_serial_win32_comm"
-		  ExtModeMexArgs	  "0,6,115200,10"
+		  ExtModeMexArgs	  "0,9,460800,5"
 		  ExtModeIntrfLevel	  "Level1"
 		  InlinedParameterPlacement "Hierarchical"
 		  TargetOS		  "BareBoardExample"
@@ -1184,7 +1184,7 @@ Model {
       }
       Name		      "Configuration"
       ExtraOptions	      "-aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Code Generation/STM32 Project Files"
+      CurrentDlgPage	      "Code Generation/Interface"
       ConfigPrmDlgPosition    [ 290, 71, 1210, 699 ]
     }
     PropName		    "ConfigurationSets"
@@ -1356,11 +1356,6 @@ Model {
       PortCounts	      "[]"
     }
     Block {
-      BlockType		      Scope
-      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
-      Floating		      off
-    }
-    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -1397,11 +1392,22 @@ Model {
     Block {
       BlockType		      Terminator
     }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SaveFormat	      "Array"
+      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
+      FixptAsFi		      off
+      NumInputs		      "1"
+      SampleTime	      "0"
+    }
   }
   System {
     Name		    "quadcopter_ext_mode"
     Location		    [-8, -8, 1288, 992]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1413,9 +1419,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "980"
+    SIDHighWatermark	    "992"
     Block {
       BlockType		      Constant
       Name		      "Constant1"
@@ -1505,8 +1511,8 @@ Model {
       }
       System {
 	Name			"QuadcopterHardware"
-	Location		[-8, -8, 1288, 992]
-	Open			off
+	Location		[-1374, -8, 8, 736]
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1564,7 +1570,7 @@ Model {
 	  ReadBeforeWriteMsg	  "warning"
 	  WriteAfterWriteMsg	  "warning"
 	  WriteAfterReadMsg	  "warning"
-	  InitialValue		  "[1 0 0 0]"
+	  InitialValue		  "q_init"
 	  ShowAdditionalParam	  off
 	  OutDataTypeStr	  "single"
 	  SignalType		  "real"
@@ -1631,7 +1637,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "LIS3MDLRead"
-	    Location		    [-8, -8, 1288, 992]
+	    Location		    [-8, -8, 1928, 1048]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
@@ -1677,7 +1683,7 @@ Model {
 	      handler		      "hi2c3"
 	      Buffer_Size	      "6"
 	      Timeout		      "2000"
-	      TimeoutValue	      "40"
+	      TimeoutValue	      "80"
 	      Enable_Output	      on
 	      Error		      off
 	      CallBack		      off
@@ -2181,7 +2187,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "LIS3MDLWrite"
-	    Location		    [-8, -8, 1288, 992]
+	    Location		    [-8, -8, 1928, 1048]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
@@ -2219,7 +2225,7 @@ Model {
 	      Buffer_Size	      "1"
 	      handler		      "hi2c3"
 	      Timeout		      "2000"
-	      TimeoutValue	      "40"
+	      TimeoutValue	      "80"
 	      Error		      off
 	      CallBack		      off
 	    }
@@ -2239,7 +2245,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "LSM6DS33Read"
-	    Location		    [-8, -8, 1288, 992]
+	    Location		    [-1374, -8, 8, 736]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
@@ -2286,7 +2292,7 @@ Model {
 	      handler		      "hi2c3"
 	      Buffer_Size	      "12"
 	      Timeout		      "2000"
-	      TimeoutValue	      "40"
+	      TimeoutValue	      "80"
 	      Enable_Output	      on
 	      Error		      off
 	      CallBack		      off
@@ -3264,7 +3270,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "LSM6DS33Write"
-	    Location		    [-8, -8, 1288, 992]
+	    Location		    [-8, -8, 1928, 1048]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
@@ -3302,7 +3308,7 @@ Model {
 	      Buffer_Size	      "1"
 	      handler		      "hi2c3"
 	      Timeout		      "2000"
-	      TimeoutValue	      "40"
+	      TimeoutValue	      "80"
 	      Error		      off
 	      CallBack		      off
 	    }
@@ -3477,13 +3483,13 @@ Model {
 	  currentTIM		  "TIM1"
 	  TIM_Name		  "TIM1"
 	  TIM_APBClock		  "168000000"
-	  TIM_Set_Clk		  off
-	  TIM_Prescaler		  "16799"
-	  TIM_Clock		  "10000.00"
+	  TIM_Set_Clk		  on
+	  TIM_Prescaler		  "209"
+	  TIM_Clock		  "800000.00"
 	  Variable_frequency	  off
 	  TIM_Set_OutFreq	  off
 	  TIM_ARR		  "100"
-	  Output_frequency	  "100.00"
+	  Output_frequency	  "8000.00"
 	  Repetition_counter	  "0"
 	  TIM_Mode		  "Up"
 	  TIM_DMA		  "none"
@@ -4308,13 +4314,6 @@ Model {
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  83
-	  SrcBlock		  "LSM6DS33Read"
-	  SrcPort		  6
-	  DstBlock		  "Triggered\nSubsystem"
-	  DstPort		  9
-	}
-	Line {
 	  ZOrder		  13
 	  SrcBlock		  "LIS3MDLRead"
 	  SrcPort		  3
@@ -4412,44 +4411,14 @@ Model {
 	  DstBlock		  "Triggered\nSubsystem"
 	  DstPort		  8
 	}
+	Line {
+	  ZOrder		  83
+	  SrcBlock		  "LSM6DS33Read"
+	  SrcPort		  6
+	  DstBlock		  "Triggered\nSubsystem"
+	  DstPort		  9
+	}
       }
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "967"
-      Ports		      [3]
-      Position		      [345, -744, 405, -606]
-      ZOrder		      920
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-22.86504','MaxYLimReal','77.1236','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','77.1236','Le"
-      "gendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862"
-      "74509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352"
-      "9411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764"
-      "7058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalL"
-      "abel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'roll'}},'ShowConten"
-      "t',true,'Placement',1),struct('MinYLimReal','-4.98136','MaxYLimReal','49.53814','YLabelReal','','MinYLimMag','0'"
-      ",'MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'"
-      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07"
-      "45098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07"
-      "45098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921568"
-      "63],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',"
-      "{{'pitch'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-142.90935','MaxYLimReal','-85.18087','YLabe"
-      "lReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',f"
-      "alse,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1"
-      " 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745"
-      "098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509"
-      "8039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}}"
-      ",'NumLines',1,'LineNames',{{'yaw'}},'ShowContent',true,'Placement',3)},'DisplayPropertyDefaults',struct('YLabelR"
-      "eal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder'"
-      ",[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058"
-      "823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.074"
-      "5098039215686 0.650980392156863]),'DisplayLayoutDimensions',[3 1],'DisplayContentCache',[],'TimeRangeSamples','6"
-      "0','TimeRangeFrames','60'),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY'),extmgr."
-      "Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Position',[1 41 1280 907])"
-      NumInputPorts	      "3"
     }
     Block {
       BlockType		      Terminator
@@ -4457,6 +4426,48 @@ Model {
       SID		      "831"
       Position		      [365, -595, 385, -575]
       ZOrder		      910
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "990"
+      Ports		      [1]
+      Position		      [345, -735, 405, -705]
+      ZOrder		      929
+      VariableName	      "roll"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "991"
+      Ports		      [1]
+      Position		      [345, -690, 405, -660]
+      ZOrder		      930
+      VariableName	      "pitch"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      SID		      "992"
+      Ports		      [1]
+      Position		      [345, -645, 405, -615]
+      ZOrder		      931
+      VariableName	      "yaw"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
     }
     Line {
       Name		      "PWM_S2"
@@ -4496,30 +4507,30 @@ Model {
     }
     Line {
       Name		      "roll"
-      ZOrder		      979
+      ZOrder		      995
       Labels		      [1, 1]
       SrcBlock		      "QuadcopterHardware"
       SrcPort		      1
-      DstBlock		      "Scope"
+      DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
       Name		      "pitch"
-      ZOrder		      980
+      ZOrder		      996
       Labels		      [1, 1]
       SrcBlock		      "QuadcopterHardware"
       SrcPort		      2
-      DstBlock		      "Scope"
-      DstPort		      2
+      DstBlock		      "To Workspace1"
+      DstPort		      1
     }
     Line {
       Name		      "yaw"
-      ZOrder		      981
+      ZOrder		      997
       Labels		      [1, 1]
       SrcBlock		      "QuadcopterHardware"
       SrcPort		      3
-      DstBlock		      "Scope"
-      DstPort		      3
+      DstBlock		      "To Workspace2"
+      DstPort		      1
     }
     Line {
       Name		      "quaternion"
@@ -4729,6 +4740,9 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 12 0 0]
     viewObj		    11
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
