@@ -35,7 +35,6 @@ LSM6DS33_ADDRESS = 214;
 LIS3MDL_ADDRESS = 60;
 
 
-
 % load('workspaces\data.mat');
 % 
 % t = transpose(0 : 0.001: 10);
@@ -51,21 +50,37 @@ C = [1 0];
 
 Pk_corr_0 = Q; 
 
-mag_x_offset = single(3.48);
-mag_y_offset = single(-0.162);
-mag_z_offset = single(0.177);
+mag_x_offset = single(0);
+mag_y_offset = single(0);
+mag_z_offset = single(0);
 
-mag_x_gain = single(1.17);
-mag_y_gain = single(1.133);
-mag_z_gain = single(1.14);
+mag_x_gain = single(1);
+mag_y_gain = single(1);
+mag_z_gain = single(1);
 
-acc_x_offset = single(0.004);
-acc_y_offset = single(0.0);
-acc_z_offset = single(0.021);
+acc_x_offset = single(0);
+acc_y_offset = single(0);
+acc_z_offset = single(0);
 
-acc_x_gain = single(0.975);
-acc_y_gain = single(0.99);
-acc_z_gain = single(0.97);
+acc_x_gain = single(1);
+acc_y_gain = single(1);
+acc_z_gain = single(1);
+
+% mag_x_offset = single(3.48);
+% mag_y_offset = single(-0.162);
+% mag_z_offset = single(0.177);
+% 
+% mag_x_gain = single(1.17);
+% mag_y_gain = single(1.133);
+% mag_z_gain = single(1.14);
+% 
+% acc_x_offset = single(0.002);
+% acc_y_offset = single(-0.012);
+% acc_z_offset = single(-0.007);
+% 
+% acc_x_gain = single(0.975);
+% acc_y_gain = single(0.99);
+% acc_z_gain = single(0.97);
 
 trigger_init = 1;
 q_init = single([1 0 0 0]);
